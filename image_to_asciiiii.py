@@ -10,8 +10,6 @@ class picToAscii():
 		self.name = argv
 		self.clar = c
 
-# usage = "python3 image_to_asciiiii.py [*.png]"
-# argv = sys.argv[1]
 
 	def per(self,inte, resLen):
 		return int((inte/255.0)* 100 * ((resLen-1)*0.01)) 
@@ -26,10 +24,15 @@ class picToAscii():
 			return False
 		return True
 
-#opens the image and converts to black and white
+	def RGBToHEX(self,r,g,b):
+		num = "0123456789abcdef"
+		hexCode = ""
+
+
+	#opens the image and converts to black and white
 	def toAscii_BlackWhite(self):
 		image = cv2.imread(f"{self.name}")
-		image = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+		imageBW = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
 
 		x = image.shape[0]
 		y = image.shape[1]
@@ -41,7 +44,7 @@ class picToAscii():
 		#prints to file by pixel intensity
 		for i in range(0,x,self.clar):
 			for j in range(0,y,self.clar):
-				inte = int(image[i,j])
+				inte = int(imagBWe[i,j])
 				#print(f"{self.res[self.per(inte,len(self.res))]}",file = fileOut, end = " ")
 				print(f"{self.res[self.per(inte,len(self.res))]}", end = " ")
 			#print("",file = fileOut)
