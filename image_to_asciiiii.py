@@ -5,7 +5,7 @@ class picToAscii():
 
 	def __init__(self ,c , argv = None):
 		#to lazy to flip entire string in reverse
-		res = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.          "
+		res = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.             "
 		self.res = res[::-1]
 		self.name = argv
 		self.clar = c
